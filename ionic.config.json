@@ -1,0 +1,7 @@
+{
+  "name": "hackathon22-realEsTech",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
