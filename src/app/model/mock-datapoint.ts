@@ -1,0 +1,28 @@
+import { DataPoint } from "./datapoint";
+
+export const DATAPOINTS: DataPoint[] = [
+    {id: 0, attr1: 'Ease of getting a cab', attr2:'Easy', attr3: 'Average waiting time of 1-5mins', rating: 5, category: 1, categoryName: 'Transportation', location: '2 Shenton Way', isSelected: false},
+{id: 1, attr1: 'Ease of getting a cab', attr2:'Difficult', attr3: 'Average waiting time of 20-30mins', rating: 1, category: 1, categoryName: 'Transportation', location: '1 Hillview Ave', isSelected: false},
+{id: 2, attr1: 'Traffic condition', attr2:'High congestion', attr3: 'Recurring high volume traffic in the nearby roads/highways', rating: 1, category: 1, categoryName: 'Transportation', location: '2 Shenton Way', isSelected: false},
+{id: 3, attr1: 'Traffic condition', attr2:'No congestion', attr3: 'Roads surrounding this location does not have regular congestion', rating: 5, category: 1, categoryName: 'Transportation', location: '1 Hillview Ave', isSelected: false},
+{id: 4, attr1: 'Population density', attr2:'High ', attr3: 'This location has a high number of residents per square km', rating: 1, category: 2, categoryName: 'Liveability', location: '2 Shenton Way', isSelected: false},
+{id: 5, attr1: 'Population density', attr2:'Medium ', attr3: 'The number of residents per square km meets the district average', rating: 3, category: 2, categoryName: 'Liveability', location: '1 Hillview Ave', isSelected: false},
+{id: 6, attr1: 'Pet friendly area', attr2:'Average ', attr3: 'More than 1 facilities catering to pets (supply stores, vet clinics) in the vicinity', rating: 3, category: 2, categoryName: 'Liveability', location: '2 Shenton Way', isSelected: false},
+{id: 7, attr1: 'Pet friendly area', attr2:'Great', attr3: 'More than 5 facilities catering to pets (supply stores, vet clinics) in the vicinity', rating: 5, category: 2, categoryName: 'Liveability', location: '1 Hillview Ave', isSelected: false},
+{id: 8, attr1: 'Pollution level', attr2:'Disappointing', attr3: 'Presence of industrial hubs and airports in the vicinity', rating: 2, category: 2, categoryName: 'Liveability', location: '2 Shenton Way', isSelected: false},
+{id: 9, attr1: 'Pollution level', attr2:'Extremely low', attr3: 'No presence of industrial hubs and airports in the vicinity', rating: 5, category: 2, categoryName: 'Liveability', location: '1 Hillview Ave', isSelected: false},
+{id: 10, attr1: 'Ease of recycling ', attr2:'Difficult', attr3: 'Low presence of recycling facilities (e-waste recycling, cash for trash etc.) in the vicinity', rating: 2, category: 3, categoryName: 'Sustainability', location: '2 Shenton Way', isSelected: false},
+{id: 11, attr1: 'Ease of recycling ', attr2:'Convenient', attr3: 'Multiple recycling facilities (e-waste recycling, cash for trash etc.) in the vicinity', rating: 4, category: 3, categoryName: 'Sustainability', location: '1 Hillview Ave', isSelected: false},
+{id: 12, attr1: 'Upcoming constructions', attr2:'Medium', attr3: 'Few ongoing/ planned construction adjacent to the location', rating: 3, category: 2, categoryName: 'Liveability', location: '2 Shenton Way', isSelected: false},
+{id: 13, attr1: 'Upcoming constructions', attr2:'Low', attr3: 'Multiple ongoing/ planned constructions adjacent to the location', rating: 4, category: 2, categoryName: 'Liveability', location: '1 Hillview Ave', isSelected: false},
+{id: 14, attr1: 'Closeness to nature ', attr2:'Far', attr3: 'No nature sites within 1km', rating: 2, category: 2, categoryName: 'Liveability', location: '2 Shenton Way', isSelected: false},
+{id: 15, attr1: 'Closeness to nature ', attr2:'Stone\'s throw away', attr3: 'Nature sites accessible at door step', rating: 5, category: 2, categoryName: 'Liveability', location: '1 Hillview Ave', isSelected: false},
+{id: 16, attr1: 'Green public transportation ', attr2:'No access', attr3: 'No alternative modes of transport (e.g. ebikes, escooters) ', rating: 1, category: 3, categoryName: 'Sustainability', location: '2 Shenton Way', isSelected: false},
+{id: 17, attr1: 'Green public transportation ', attr2:'Easy access', attr3: 'Very easy access to alternative modes of transport (e.g. ebikes, escooters) ', rating: 5, category: 3, categoryName: 'Sustainability', location: '1 Hillview Ave', isSelected: false},
+{id: 18, attr1: 'EV charging point', attr2:'Convenient access', attr3: 'Multiple EV charging points within a 3km radius', rating: 4, category: 3, categoryName: 'Sustainability', location: '2 Shenton Way', isSelected: false},
+{id: 19, attr1: 'EV charging point', attr2:'No easy access', attr3: 'No EV charging points within a 3km radius', rating: 1, category: 3, categoryName: 'Sustainability', location: '1 Hillview Ave', isSelected: false},
+{id: 20, attr1: 'Flash flood prone areas', attr2:'Not prone', attr3: 'Area has not experienced flash floods in the last 48 months', rating: 1, category: 2, categoryName: 'Sustainability', location: '2 Shenton Way', isSelected: false},
+{id: 21, attr1: 'Flash flood prone areas', attr2:'Highly prone', attr3: 'Area experienced 1-2 flash floods in the last 48 months', rating: 3, category: 2, categoryName: 'Sustainability', location: '1 Hillview Ave', isSelected: false},
+{id: 22, attr1: 'Accessibility to highway', attr2:'Very convenient access', attr3: 'Easy access/ connectivity to highway ', rating: 5, category: 1, categoryName: 'Transportation', location: '2 Shenton Way', isSelected: false},
+{id: 23, attr1: 'Accessibility to highway', attr2:'Not convenient', attr3: 'Long distance travel within the city is required before connecting to the highway', rating: 3, category: 1, categoryName: 'Transportation', location: '1 Hillview Ave', isSelected: false},
+];

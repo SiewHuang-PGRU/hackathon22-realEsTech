@@ -1,7 +1,8 @@
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      <img src="assets/forbusiness.svg" style="padding-left: 30px">
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +10,33 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large"><img src="assets/forbusiness.svg"></ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-row class="ion-align-items-center">
+      <ion-col>
+        <h2>Liveability Index</h2>
+
+      </ion-col>
+    </ion-row>
+    
+     <ion-row class="ion-align-items-center">
+        <ion-searchbar animated="true" placeholder="Search address" #searchLocation class="search-bar"  style="border-radius:8px"></ion-searchbar>
+        <ion-button (click)="getDataPoints(searchLocation.value)" class="search-btn">Search</ion-button>
+      
+     </ion-row>
+      
+      <ion-row style="padding-top:30px;padding-bottom:0;text-align: center;" *ngIf="finalGroup.length == 0">
+        <ion-col><ion-icon name="search" style="font-size:40px; color:#9FA8AF"></ion-icon></ion-col>
+        
+      </ion-row>
+      <ion-row style="padding-top:0; text-align: center;" *ngIf="finalGroup.length == 0">
+        <ion-col><label style="font-size:14px; color:#2C2C2C">Start Searching</label></ion-col>
+      </ion-row>
+      
   </div>
+  <app-section [groups]="finalGroup" [selectedDatapoints]="selectedDatapoints"></app-section>
+  
 </ion-content>

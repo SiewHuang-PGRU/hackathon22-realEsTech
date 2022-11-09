@@ -24,3 +24,81 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+:root {
+	--ion-color-primary: #062472;
+	--ion-color-primary-rgb: 6,36,114;
+	--ion-color-primary-contrast: #ffffff;
+	--ion-color-primary-contrast-rgb: 255,255,255;
+	--ion-color-primary-shade: #052064;
+	--ion-color-primary-tint: #1f3a80;
+
+    --ion-color-medium: #505050;
+	--ion-color-medium-rgb: 80,80,80;
+	--ion-color-medium-contrast: #ffffff;
+	--ion-color-medium-contrast-rgb: 255,255,255;
+	--ion-color-medium-shade: #464646;
+	--ion-color-medium-tint: #626262;
+
+    --ion-color-pg4b-black:  #2C2C2C;
+    --ion-color-pg4b-grey: #999999;
+    --ion-color-pg4b-darker-grey : #505050;
+      --ion-color-pg4b-cool-grey-40 : #9FA8AF;
+      --ion-color-pg4b-cool-grey-lightest : #F3F4F5;
+      --ion-color-pg4b-neutral-grey : #F2F2F2;
+      --ion-color-pg4b-functional-yellow : #FCB40A;
+      --ion-color-pg4b-primary : #E2F9FF;
+      --ion-color-pg4b-primary-default : #062472;
+      
+}
+
+.ion-color-pg4b-black {
+    --ion-color-base: #2C2C2C;
+  }
+
+.ion-color-pg4b-grey {
+    --ion-color-base: #999999;
+  }
+
+  .ion-color-pg4b-darker-grey {
+    --ion-color-base: #505050;
+  }
+
+  .ion-color-pg4b-cool-grey-40 {
+    --ion-color-base: #9FA8AF;
+  }
+
+  .ion-color-pg4b-cool-grey-lightest {
+    --ion-color-base: #F3F4F5;
+  }
+
+  .ion-color-pg4b-neutral-grey {
+    --ion-color-base: #F2F2F2;
+  }
+
+  .ion-color-pg4b-functional-yellow {
+    --ion-color-base: #FCB40A;
+  }
+
+  .ion-color-pg4b-primary {
+    --ion-color-base: #E2F9FF;
+  }
+
+  .ion-color-pg4b-primary-default {
+    --ion-color-base: #062472;
+  }
+
+  ion-button{
+    text-transform: none;
+  }
+
+  .padding-div{
+    padding-left:40px;
+    padding-right:40px;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+
+ion-modal{
+    --width:95%;
+}

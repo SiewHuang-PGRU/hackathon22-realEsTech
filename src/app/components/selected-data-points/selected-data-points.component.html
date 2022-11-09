@@ -1,0 +1,53 @@
+<ion-row class="preview-box">
+  <ion-row><h4>Liveability Index</h4></ion-row>
+  <!-- <ion-row >
+      <ion-col size="3" *ngFor="let detail of details">
+        <ion-card>
+          <ion-card-header>
+            <ion-row class="ion-align-items-center">
+              <ion-card-subtitle>{{detail.attr1}}</ion-card-subtitle>
+            </ion-row>  
+              <ion-card-title>{{detail.attr2}}</ion-card-title>   
+          </ion-card-header>
+          <ion-card-content>
+            <ion-row class="ion-align-items-center">
+              <span>{{detail.attr3}}</span>             
+            </ion-row> 
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row> -->
+    <ion-row style="padding-left:0;padding-right:0;">
+      <ion-col size="3" *ngFor="let detail of details" style="padding:0;">
+        <!-- <app-data-card [datapoint]="detail"></app-data-card> -->
+        
+        
+        <ion-card style="box-shadow: none;" >
+          <ion-card-header>
+            <ion-row class="ion-align-items-center">
+              <span class="category-tag">{{detail.categoryName}}</span>
+              
+                <div class="star-col">
+                  <ion-icon name="star" *ngFor="let _ of [].constructor(detail.rating)"></ion-icon>
+                  <ion-icon name="star-outline" *ngFor="let _ of [].constructor(5 - detail.rating)"></ion-icon>
+                </div>       
+            </ion-row>  
+            <ion-card-subtitle>{{detail.attr1}}</ion-card-subtitle>
+              <ion-card-title>{{detail.attr2}}</ion-card-title>   
+          </ion-card-header>
+          <ion-card-content>
+            <ion-row >
+              <ion-col size="12">
+                <span class="desc-span">{{detail.attr3}}</span>
+              </ion-col>
+              
+            </ion-row> 
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <span style="font-size:12px">Powered by RealEsTech</span>
+    </ion-row>
+</ion-row>
+    

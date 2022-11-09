@@ -1,0 +1,128 @@
+.embed-row{
+    padding-top:10px;
+    padding-bottom: 10px;
+    background-color: var(--ion-color-pg4b-cool-grey-lightest);
+    padding-left:40px;
+    padding-right:40px;
+}
+.embed-btn{
+    float:right;
+    //width: 82px;
+  height: 48px;
+}
+
+.top-chip{
+    background-color: var(--ion-color-pg4b-neutral-grey);
+}
+
+ion-row{
+    padding-top:10px;
+    padding-bottom:10px;
+  }
+
+  h4{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 22px;
+line-height: 42px;
+/* identical to box height */
+
+  }
+
+  h3{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 51px;
+    /* identical to box height */
+    color: #2C2C2C;
+
+  }
+
+ion-textarea{
+    font-size:14px;
+    height:100%
+}
+
+  ion-icon[name="star"]{
+    color:var(--ion-color-pg4b-functional-yellow)
+    
+  }
+  ion-icon[name="star-outline"]{
+    color:var(--ion-color-pg4b-functional-yellow)
+  }
+
+  ion-card .category-tag{
+    background: #F0EAF4;
+border-radius: 4px;
+font-size: 12px;
+line-height: 18px;
+padding: 1px 8px;
+text-transform: uppercase;
+color: #2C2C2C;
+  }
+
+  ion-card ion-row{
+    padding:0;
+  }
+  ion-card ion-col{
+    padding:0;
+  }
+
+  ion-card-subtitle{
+    padding-top:4px;
+    padding-bottom:4px;
+  }
+
+ ion-card{
+    border: 2px solid #9FA8AF;
+border-radius: 4px;
+margin-inline:6px;
+min-height:200px;
+ }
+
+ .desc-span{
+    font-size:14px;
+    color: #505050;
+ }
+.checkbox-span ion-icon{
+    font-size: 24px;
+}
+.checkbox-span{
+    position:absolute;
+    right:0;
+    bottom:0;
+}
+
+.selected-card{
+    border: 2px solid #062472;
+    span.checkbox-span ion-icon{
+        color:#062472
+    }
+}
+
+ion-card-content{
+    bottom: 0;
+    position: absolute;
+    width:100%;
+}
+ion-card-header{
+    width:100%
+}
+
+.star-col{
+    position: absolute;
+    right: 0;
+    padding-right: 15px;
+}
+
+.preview-section{
+    background-color: var(--ion-color-pg4b-cool-grey-lightest);
+    padding-right:5px;
+    border-right: 3px solid white;
+}
+.embed-section{
+    background-color: var(--ion-color-pg4b-cool-grey-lightest);
+}

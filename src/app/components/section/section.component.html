@@ -1,0 +1,116 @@
+<div *ngIf="groups.length >0">
+  <ion-grid>
+    <ion-row class="ion-align-items-center ion-justify-content-between" class="embed-row">
+      <ion-col style="padding-top:22px;">
+        {{selectedDatapoints.length}} Selected
+      </ion-col>
+        <!-- <ion-button (click)="updateAll()" *ngIf="!isAllSelected">Select All</ion-button>
+        <ion-button (click)="updateAll()" *ngIf="isAllSelected">Deselect All</ion-button> -->
+        <ion-col>
+          <ion-button (click)="embed()" [disabled]="selectedDatapoints.length === 0" class="embed-btn" fill="outline">
+            <ion-icon name="code-slash-outline" ></ion-icon> Embed</ion-button>
+        </ion-col>
+  
+    </ion-row>
+  </ion-grid>
+
+  <div class="padding-div">
+    <ion-row>
+      <ion-chip *ngFor="let grp of groups" class="top-chip">{{grp.categoryName}}</ion-chip>
+    </ion-row>
+    <ion-row>
+      <span class="ion-color-pg4b-black">Select the pointers that you would like to show.</span>
+    </ion-row>
+    <div *ngFor="let data of groups">
+      <!-- <app-category [group]="data"></app-category> -->
+
+        <ion-row>
+          <h4 class="ion-color-pg4b-black">{{data.categoryName}}</h4>
+        </ion-row>
+        <ion-row style="padding-left:0;padding-right:0;">
+          <ion-col size="3" *ngFor="let detail of data.details" style="padding:0;">
+            <!-- <app-data-card [datapoint]="detail"></app-data-card> -->
+            
+            
+            <ion-card style="box-shadow: none;" (click)="updateSelectedData(detail)" [ngClass]="{'selected-card': detail.isSelected}">
+              <ion-card-header>
+                <ion-row class="ion-align-items-center">
+                  <span class="category-tag">{{detail.categoryName}}</span>
+                  
+                    <div class="star-col">
+                      <ion-icon name="star" *ngFor="let _ of [].constructor(detail.rating)"></ion-icon>
+                      <ion-icon name="star-outline" *ngFor="let _ of [].constructor(5 - detail.rating)"></ion-icon>
+                    </div>
+                      
+                    
+                  
+                </ion-row>  
+                <ion-card-subtitle>{{detail.attr1}}</ion-card-subtitle>
+                  <ion-card-title>{{detail.attr2}}</ion-card-title>   
+              </ion-card-header>
+              <ion-card-content>
+                <ion-row >
+                  <ion-col size="11">
+                    <span class="desc-span">{{detail.attr3}}</span>
+                  </ion-col>
+                  <ion-col size="1">
+                    <span class="checkbox-span">
+                      <ion-icon name="square-outline" *ngIf="!detail.isSelected"></ion-icon>
+                      <ion-icon name="checkbox" *ngIf="detail.isSelected"></ion-icon>
+                    </span>
+                    
+                    <!-- <ion-item class="checkbox-item">
+                      <ion-checkbox slot="start" (ionChange)="updateSelectedData(detail)" [checked]="detail.isSelected" style="margin:0;padding:0"></ion-checkbox>
+                      <ion-label style="display:none"></ion-label>
+                    </ion-item> -->
+                  </ion-col>
+                  
+                </ion-row> 
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+  
+    </div>
+  </div>
+
+
+
+ <!-- <app-embed-modal [isOpen]="openModal" [details]="selectedDatapoints"></app-embed-modal> -->
+ 
+ <ion-modal [isOpen]="openModal" class="preview-modal" backdrop-dismiss="false">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title><h3>Preview</h3></ion-title>
+        <!-- <ion-buttons slot="end">
+          <ion-button (click)="setOpen(false)">Close</ion-button>
+        </ion-buttons> -->
+        <ion-icon name="close" (click)="setOpen(false)"  style="position:absolute;top:5px;right:5px;font-size:20px"></ion-icon>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-row>
+<ion-col size="10" class="preview-section">
+  <!-- <ion-row><h4>Liveability Index</h4></ion-row> -->
+ <app-selected-data-points  [ids]="selectedIds"></app-selected-data-points>
+  
+</ion-col>
+<ion-col size="2" class="embed-section">
+  <ion-row><span style="font-size:18px;padding-top: 20px;
+    padding-bottom: 20px;">Embed Content</span></ion-row>
+  <ion-item>
+    <ion-textarea [autoGrow]="true"
+    value="{{embededCode}}">
+  </ion-textarea>
+  </ion-item>
+  <ion-button (click)="copyCode(embededCode)" fill="outline" style="height: 48px;position: absolute;
+  bottom: 0;">Copy Code</ion-button>
+</ion-col>
+      </ion-row>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+</div>
