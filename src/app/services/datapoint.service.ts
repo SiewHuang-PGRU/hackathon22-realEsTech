@@ -13,7 +13,7 @@ export class DatapointService {
   getDataPoints(location: any): Observable<DataPoint[]>{
     var datapoints = DATAPOINTS.filter(a => a.location === location)!;
     if(datapoints.length ==0){
-      datapoints = DATAPOINTS.filter(a => a.id%2 ==- 0)!;
+      datapoints = DATAPOINTS.filter(a => a.id%2 != 0)!;
     }
     return of(datapoints);
   }

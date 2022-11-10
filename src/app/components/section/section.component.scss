@@ -1,6 +1,6 @@
 .embed-row{
-    padding-top:10px;
-    padding-bottom: 10px;
+    padding-top:0;
+    padding-bottom: 0;
     background-color: var(--ion-color-pg4b-cool-grey-lightest);
     padding-left:40px;
     padding-right:40px;
@@ -9,6 +9,11 @@
     float:right;
     //width: 82px;
   height: 48px;
+  --background: white;
+}
+
+.embed-btn.disabled{
+--background: white;
 }
 
 .top-chip{
@@ -80,7 +85,7 @@ color: #2C2C2C;
     border: 2px solid #9FA8AF;
 border-radius: 4px;
 margin-inline:6px;
-min-height:200px;
+min-height:180px;
  }
 
  .desc-span{
@@ -122,7 +127,18 @@ ion-card-header{
     background-color: var(--ion-color-pg4b-cool-grey-lightest);
     padding-right:5px;
     border-right: 3px solid white;
+    min-height: 390px;
 }
 .embed-section{
     background-color: var(--ion-color-pg4b-cool-grey-lightest);
+    min-height: 390px;
+}
+
+.content-div ion-row{
+  padding-top:0px;
+  padding-bottom:0px;
+}
+
+.content-div h4{
+  line-height:12px;
 }

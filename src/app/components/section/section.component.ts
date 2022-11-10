@@ -148,8 +148,8 @@ export class SectionComponent implements OnInit {
     // return await modal.present();
   }
   
-  copyCode(content: string):void{
-    navigator.clipboard.writeText(content);
+  async copyCode(content: string){
+    await navigator.clipboard.writeText(content);
   }
 
   setOpen(status: boolean):void{

@@ -1,27 +1,27 @@
 <div *ngIf="groups.length >0">
   <ion-grid>
     <ion-row class="ion-align-items-center ion-justify-content-between" class="embed-row">
-      <ion-col style="padding-top:22px;">
+      <ion-col style="padding-top:23px;">
         {{selectedDatapoints.length}} Selected
       </ion-col>
         <!-- <ion-button (click)="updateAll()" *ngIf="!isAllSelected">Select All</ion-button>
         <ion-button (click)="updateAll()" *ngIf="isAllSelected">Deselect All</ion-button> -->
         <ion-col>
           <ion-button (click)="embed()" [disabled]="selectedDatapoints.length === 0" class="embed-btn" fill="outline">
-            <ion-icon name="code-slash-outline" ></ion-icon> Embed</ion-button>
+            <ion-icon name="code-slash-outline" style="padding-right:5px"></ion-icon>Embed</ion-button>
         </ion-col>
   
     </ion-row>
   </ion-grid>
 
   <div class="padding-div">
-    <ion-row>
+    <ion-row >
       <ion-chip *ngFor="let grp of groups" class="top-chip">{{grp.categoryName}}</ion-chip>
     </ion-row>
-    <ion-row>
+    <ion-row >
       <span class="ion-color-pg4b-black">Select the pointers that you would like to show.</span>
     </ion-row>
-    <div *ngFor="let data of groups">
+    <div *ngFor="let data of groups" class="content-div">
       <!-- <app-category [group]="data"></app-category> -->
 
         <ion-row>
