@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DataPoint } from 'src/app/model/datapoint';
 import { ModalController } from '@ionic/angular';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-section',
@@ -15,7 +16,7 @@ export class SectionComponent implements OnInit {
   selectedIds: string;
   embededCode: string;
 
-  constructor(public modalController: ModalController) { }
+  constructor(public modalController: ModalController, private route:ActivatedRoute,private router: Router) { }
 
   ngOnInit() {
   }
@@ -148,8 +149,15 @@ export class SectionComponent implements OnInit {
     // return await modal.present();
   }
   
-  async copyCode(content: string){
-    await navigator.clipboard.writeText(content);
+  copyCode(content: string){
+    //await navigator.clipboard.writeText(content);
+    this.setOpen(false);
+    //this.router.navigate(['/loading']);
+    setTimeout(() => 
+{
+    this.router.navigate(['/loading',this.selectedIds]);
+},
+500);
   }
 
   setOpen(status: boolean):void{

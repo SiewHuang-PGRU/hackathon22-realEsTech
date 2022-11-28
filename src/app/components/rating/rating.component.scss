@@ -1,0 +1,36 @@
+
+.rating-span{
+    display: inline-block;
+    font-size: 12px;
+    position: absolute;
+    left: -15px;
+}
+.gradient-bar{
+    height:12px;
+    width:60px;
+    border:none;
+    display: inline-block;
+    margin-left:5px;
+}
+
+.rating-1{
+    background: linear-gradient(90deg, #FFD1BC 0%, #FF9869 72.92%);
+    border-radius: 2px;
+}
+.rating-2{
+    background: linear-gradient(90deg, #FF9869 0%, #FF9869 53.43%, #FFCE5B 100%);
+    border-radius: 2px;
+}
+.rating-3{
+    background: linear-gradient(90deg, #FFCE5B 39.06%, #FCB40A 75%);
+    border-radius: 2px;
+}
+.rating-4{
+    background: linear-gradient(90deg, #9BDABE 64.58%, #84BAA2 100%);
+    border-radius: 2px;
+}
+.rating-5{
+    background: linear-gradient(90deg, #9BDABE 0%, #07A35D 76.56%);
+    border-radius: 2px;
+}
+

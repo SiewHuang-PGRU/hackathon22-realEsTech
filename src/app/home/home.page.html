@@ -28,11 +28,14 @@
      </ion-row>
       
       <ion-row style="padding-top:30px;padding-bottom:0;text-align: center;" *ngIf="finalGroup.length == 0">
-        <ion-col><ion-icon name="search" style="font-size:40px; color:#9FA8AF"></ion-icon></ion-col>
+        <ion-col>
+          <img src="assets/search.png">
+          <!-- <ion-icon name="search" style="font-size:40px; color:#9FA8AF"></ion-icon> -->
+        </ion-col>
         
       </ion-row>
       <ion-row style="padding-top:0; text-align: center;" *ngIf="finalGroup.length == 0">
-        <ion-col><label style="font-size:14px; color:#2C2C2C">Start Searching</label></ion-col>
+        <ion-col><label style="font-size:18px;font-weight:500; color:#07131C">Start Searching</label></ion-col>
       </ion-row>
       
   </div>

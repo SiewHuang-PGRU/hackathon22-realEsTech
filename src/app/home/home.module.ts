@@ -7,6 +7,10 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { SectionComponent } from '../components/section/section.component';
 import { SelectedDataPointsComponent } from '../components/selected-data-points/selected-data-points.component';
+import { LoadingComponent } from '../components/loading/loading.component';
+import { NewLaunchPage } from '../new-launch/new-launch.page';
+import { ResalePage } from '../resale/resale.page';
+import { RatingComponent } from '../components/rating/rating.component';
 
 
 @NgModule({
@@ -16,6 +20,6 @@ import { SelectedDataPointsComponent } from '../components/selected-data-points/
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage,SectionComponent, SelectedDataPointsComponent]
+  declarations: [HomePage,SectionComponent, SelectedDataPointsComponent, LoadingComponent, NewLaunchPage, ResalePage,RatingComponent]
 })
 export class HomePageModule {}

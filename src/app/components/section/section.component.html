@@ -1,23 +1,26 @@
 <div *ngIf="groups.length >0">
-  <ion-grid>
-    <ion-row class="ion-align-items-center ion-justify-content-between" class="embed-row">
-      <ion-col style="padding-top:23px;">
-        {{selectedDatapoints.length}} Selected
-      </ion-col>
-        <!-- <ion-button (click)="updateAll()" *ngIf="!isAllSelected">Select All</ion-button>
-        <ion-button (click)="updateAll()" *ngIf="isAllSelected">Deselect All</ion-button> -->
-        <ion-col>
-          <ion-button (click)="embed()" [disabled]="selectedDatapoints.length === 0" class="embed-btn" fill="outline">
-            <ion-icon name="code-slash-outline" style="padding-right:5px"></ion-icon>Embed</ion-button>
+  <ion-grid class="sticky-grid">
+    
+      <ion-row class="ion-align-items-center ion-justify-content-between" class="embed-row">
+        <ion-col style="padding-top:23px;">
+          {{selectedDatapoints.length}} Selected
         </ion-col>
-  
-    </ion-row>
+          <!-- <ion-button (click)="updateAll()" *ngIf="!isAllSelected">Select All</ion-button>
+          <ion-button (click)="updateAll()" *ngIf="isAllSelected">Deselect All</ion-button> -->
+          <ion-col>
+            <ion-button (click)="embed()" [disabled]="selectedDatapoints.length === 0" class="embed-btn" fill="outline">
+              <ion-icon name="code-slash-outline" style="padding-right:5px"></ion-icon>Embed</ion-button>
+          </ion-col>
+    
+      </ion-row>
+    
+
   </ion-grid>
 
   <div class="padding-div">
-    <ion-row >
+    <!-- <ion-row >
       <ion-chip *ngFor="let grp of groups" class="top-chip">{{grp.categoryName}}</ion-chip>
-    </ion-row>
+    </ion-row> -->
     <ion-row >
       <span class="ion-color-pg4b-black">Select the pointers that you would like to show.</span>
     </ion-row>
@@ -28,30 +31,37 @@
           <h4 class="ion-color-pg4b-black">{{data.categoryName}}</h4>
         </ion-row>
         <ion-row style="padding-left:0;padding-right:0;">
-          <ion-col size="3" *ngFor="let detail of data.details" style="padding:0;">
+          <ion-col size-xl="3" size-lg="4" size-md="6" size-sm="12" size-xs="12" *ngFor="let detail of data.details" style="padding:0;">
             <!-- <app-data-card [datapoint]="detail"></app-data-card> -->
             
             
             <ion-card style="box-shadow: none;" (click)="updateSelectedData(detail)" [ngClass]="{'selected-card': detail.isSelected}">
               <ion-card-header>
-                <ion-row class="ion-align-items-center">
-                  <span class="category-tag">{{detail.categoryName}}</span>
+                <ion-row>
+                  <span class="category-tag" [ngClass]="detail.categoryName">{{detail.categoryName}}</span>
                   
                     <div class="star-col">
-                      <ion-icon name="star" *ngFor="let _ of [].constructor(detail.rating)"></ion-icon>
-                      <ion-icon name="star-outline" *ngFor="let _ of [].constructor(5 - detail.rating)"></ion-icon>
-                    </div>
-                      
-                    
-                  
+                      <app-rating [rating]="detail.rating"></app-rating>
+                      <!-- <ion-icon name="star" *ngFor="let _ of [].constructor(detail.rating)"></ion-icon>
+                      <ion-icon name="star-outline" *ngFor="let _ of [].constructor(5 - detail.rating)"></ion-icon> -->
+                    </div>                  
                 </ion-row>  
-                <ion-card-subtitle>{{detail.attr1}}</ion-card-subtitle>
-                  <ion-card-title>{{detail.attr2}}</ion-card-title>   
+                <ion-row>
+                  <ion-col size="9">
+                    <ion-card-subtitle>{{detail.attr1}}</ion-card-subtitle>
+                    <ion-card-title>{{detail.attr2}}</ion-card-title>   
+                    <span class="extra-desc">{{detail.attr3}}</span>
+                  </ion-col>
+                  <ion-col size="3">
+                    <img src="assets/pet.svg">
+                  </ion-col>
+                </ion-row>
+                  
               </ion-card-header>
               <ion-card-content>
                 <ion-row >
                   <ion-col size="11">
-                    <span class="desc-span">{{detail.attr3}}</span>
+                    <span class="desc-span">Source: Singapore Government Statistics</span>
                   </ion-col>
                   <ion-col size="1">
                     <span class="checkbox-span">
@@ -81,23 +91,25 @@
  
  <ion-modal [isOpen]="openModal" class="preview-modal" backdrop-dismiss="false">
   <ng-template>
-    <ion-header>
+    <ion-header class="ion-no-border">
       <ion-toolbar>
         <ion-title><h3>Preview</h3></ion-title>
+        <ion-title><label class="resp-label">Content here will be responsive.</label></ion-title>
         <!-- <ion-buttons slot="end">
           <ion-button (click)="setOpen(false)">Close</ion-button>
         </ion-buttons> -->
         <ion-icon name="close" (click)="setOpen(false)"  style="position:absolute;top:5px;right:5px;font-size:20px"></ion-icon>
       </ion-toolbar>
+      
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-row>
-<ion-col size="10" class="preview-section">
+      <ion-row style="padding-top:0">
+<ion-col size-xl="9" size-lg="8" size-md="12" size-sm="12" size-xs="12" class="preview-section">
   <!-- <ion-row><h4>Liveability Index</h4></ion-row> -->
- <app-selected-data-points  [ids]="selectedIds"></app-selected-data-points>
+ <app-selected-data-points  [ids]="selectedIds" [isPreview]=true></app-selected-data-points>
   
 </ion-col>
-<ion-col size="2" class="embed-section">
+<ion-col  class="embed-section">
   <ion-row><span style="font-size:18px;padding-top: 20px;
     padding-bottom: 20px;">Embed Content</span></ion-row>
   <ion-item>

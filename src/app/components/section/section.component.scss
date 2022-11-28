@@ -1,3 +1,10 @@
+.sticky-grid{
+  position:sticky;
+  top:0;
+  padding-top:0;
+  z-index:99;
+}
+
 .embed-row{
     padding-top:0;
     padding-bottom: 0;
@@ -25,15 +32,7 @@ ion-row{
     padding-bottom:10px;
   }
 
-  h4{
-    font-family: 'Poppins';
-font-style: normal;
-font-weight: 500;
-font-size: 22px;
-line-height: 42px;
-/* identical to box height */
 
-  }
 
   h3{
     font-family: 'Poppins';
@@ -60,13 +59,32 @@ ion-textarea{
   }
 
   ion-card .category-tag{
-    background: #F0EAF4;
+    // background: #F0EAF4;
+    font-weight:500;
 border-radius: 4px;
 font-size: 12px;
 line-height: 18px;
 padding: 1px 8px;
 text-transform: uppercase;
-color: #2C2C2C;
+// color: #2C2C2C;
+color: var(--ion-color-pg4b-cool-grey-60);
+  }
+
+  .category-tag.Transportation{
+    
+    background: var(--ion-color-pg4b-purple-lighter);
+  }
+  .category-tag.Sustainability{
+    
+    background: var(--ion-color-pg-green-lightest);
+  }
+  .category-tag.Livability{
+    
+    background: var(--ion-color-pg4b-primary);
+  }
+  .category-tag.Liveability{
+    
+    background: var(--ion-color-pg4b-primary);
   }
 
   ion-card ion-row{
@@ -79,18 +97,48 @@ color: #2C2C2C;
   ion-card-subtitle{
     padding-top:4px;
     padding-bottom:4px;
+    color:var(--ion-color-pg4b-darker-grey);
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
   }
+  
+  ion-card-title{
+    font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 30px;
+color:var(--ion-color-pg4b-black);
+  }
+span.extra-desc{
+  
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 21px;
+color:var(--ion-color-pg4b-black);
+}
 
  ion-card{
-    border: 2px solid #9FA8AF;
+  border: 2px solid #DBDEE1;
+/* PG4B/Shadows/shadow-sm */
+
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.08);
 border-radius: 4px;
 margin-inline:6px;
-min-height:180px;
+min-height:220px;
  }
 
  .desc-span{
-    font-size:14px;
-    color: #505050;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  /* PG4B / Neutral / Dark Grey */
+  color: #999999;
  }
 .checkbox-span ion-icon{
     font-size: 24px;
@@ -128,10 +176,12 @@ ion-card-header{
     padding-right:5px;
     border-right: 3px solid white;
     min-height: 390px;
+    padding: 0 10px 0 10px;
 }
 .embed-section{
     background-color: var(--ion-color-pg4b-cool-grey-lightest);
     min-height: 390px;
+    padding: 0 16px 0 16px;
 }
 
 .content-div ion-row{
@@ -141,4 +191,14 @@ ion-card-header{
 
 .content-div h4{
   line-height:12px;
+}
+
+.resp-label{
+  font-weight: 400;
+font-size: 14px;
+line-height: 16px;
+
+/* PG4B/Neutral/Black */
+
+color: #2C2C2C;
 }

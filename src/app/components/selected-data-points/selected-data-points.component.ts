@@ -12,6 +12,7 @@ import { DatapointService } from 'src/app/services/datapoint.service';
 export class SelectedDataPointsComponent implements OnInit {
   //@Input() details: DataPoint[] = [];
   @Input() ids: string;
+  @Input() isPreview: boolean;
   details: DataPoint[] = [];
   constructor(private route: ActivatedRoute,
             private dataPointService: DatapointService) { }
@@ -27,6 +28,7 @@ export class SelectedDataPointsComponent implements OnInit {
       this.getSelectedDataPointsFromParam(this.ids);
       console.log('b');
     }
+    console.log(this.isPreview);
   }
 
   getSelectedDataPointsFromParam(idString: string):void{
