@@ -163,4 +163,8 @@ export class SectionComponent implements OnInit {
   setOpen(status: boolean):void{
     this.openModal = status;
   }
+
+  showTooltip(content:string){
+    
+  }
 }
