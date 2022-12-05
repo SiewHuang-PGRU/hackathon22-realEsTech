@@ -15,27 +15,37 @@
   </ion-header>
 
   <div id="container">
-    <ion-row class="ion-align-items-center">
+    <ion-row class="ion-align-items-center header-row" >
       <ion-col>
         <h2>Liveability Index</h2>
       </ion-col>
     </ion-row>
     
-     <ion-row class="ion-align-items-center">
-        <ion-searchbar animated="true" placeholder="Search address" #searchLocation class="search-bar"  style="border-radius:8px"></ion-searchbar>
-        <ion-button (click)="getDataPoints(searchLocation.value)" class="search-btn">Search</ion-button>
+     <ion-row class="ion-align-items-center searchbar-row">
+        <!-- <ion-searchbar animated="true" placeholder="Search address" #searchLocation class="search-bar"  style="border-radius:8px"></ion-searchbar> -->
+        <ion-select placeholder="Search address" #searchLocation interface="popover" [interfaceOptions]="{size: 'cover'}" class="search-bar"  style="border-radius:8px;padding-right: 16px;">
+          <ion-select-option value="97 Cashew Rd, Singapore 679668 (West)">97 Cashew Rd, Singapore 679668 (West)</ion-select-option>
+          <ion-select-option value="60 Anson Rd, Singapore 079914 (Central)">60 Anson Rd, Singapore 079914 (Central)</ion-select-option>
+          <ion-select-option value="450 Upper Changi Rd, Singapore 487040 (East)">450 Upper Changi Rd, Singapore 487040 (East)</ion-select-option>
+          <ion-select-option value="507B Wellington Cir, Singapore 752507 (North)">507B Wellington Cir, Singapore 752507 (North)</ion-select-option>
+          <ion-select-option value="21 Telok Blangah Dr, Singapore 109258 (South)">21 Telok Blangah Dr, Singapore 109258 (South)</ion-select-option>
+        </ion-select>
+        <ion-button (click)="getDataPoints(searchLocation.value)" class="search-btn" [disabled]="searchLocation.value === any">Search</ion-button>
       
      </ion-row>
       
       <ion-row style="padding-top:30px;padding-bottom:0;text-align: center;" *ngIf="finalGroup.length == 0">
         <ion-col>
-          <img src="assets/search.png">
+          <img src="assets/search.png" class="search">
           <!-- <ion-icon name="search" style="font-size:40px; color:#9FA8AF"></ion-icon> -->
         </ion-col>
         
       </ion-row>
       <ion-row style="padding-top:0; text-align: center;" *ngIf="finalGroup.length == 0">
-        <ion-col><label style="font-size:18px;font-weight:500; color:#07131C">Start Searching</label></ion-col>
+        <ion-col><label class="label-top" style="font-size:18px;font-weight:500; color:#2c2c2c">Compute your Insight Choices Now</label></ion-col>
+      </ion-row>
+      <ion-row style="padding-top:0; text-align: center;" *ngIf="finalGroup.length == 0">
+        <ion-col><label class="label-bottom" style="font-size:14px;font-weight:500; color:#2c2c2c">The Liveability Index - Bringing your development to life in just a few clicks</label></ion-col>
       </ion-row>
       
   </div>

@@ -54,6 +54,8 @@ color: #2C2C2C;
   --box-shadow:0;
   width: 328px;
   height: 48px;
+  border-radius:8px;
+  padding-right: 16px;
 }
 
 .search-btn{
@@ -69,4 +71,60 @@ color: #2C2C2C;
 ion-row{
   padding-top:8px;
   padding-bottom:8px;
+}
+
+.label-top{
+  font-size:18px;
+  font-weight:500; 
+  color:#2c2c2c;
+}
+.label-bottom{
+  font-size:14px;
+  font-weight:500; 
+  color:#2c2c2c
+}
+
+@media (max-width: 575px){
+  #container{
+    padding-left: 16px!important;
+    padding-right:16px!important;
+  }
+  img.search{
+    height:180px;
+    width:180px;
+  }
+  .header-row{
+    padding-bottom:0;
+  }
+  .searchbar-row{
+    padding-top:0;
+  }
+  .search-bar{
+    max-width: 70%!important;
+  }
+  .search-btn{
+    width: 25%;
+    margin-left: 10px!important;
+  }
+}
+
+@media (min-width:2000px){
+  .search-bar{
+    padding-right:32px!important;
+    
+  }
+  .search-btn{
+    margin-left:32px!important;
+  }
+  img.search{
+    height:360px;
+    width:360px;
+  }
+  .label-top{
+    font-size:36px!important;
+  }
+  .label-bottom{
+    font-size:28px!important;
+  }
+  
 }

@@ -14,5 +14,8 @@ export class NewLaunchPage implements OnInit {
     this.route.snapshot.paramMap.get('ids');
     console.log(this.selectedIds);
   }
-
+  
+  goToHome(){
+    this.router.navigate(['/']);
+  }
 }

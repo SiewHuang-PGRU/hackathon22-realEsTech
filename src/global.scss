@@ -104,6 +104,7 @@
   ion-button{
     text-transform: none;
     height:48px;
+    font-family: "Roboto Regular 400";
   }
 
   .padding-div{
@@ -118,11 +119,119 @@ ion-modal{
 }
 
 h4{
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
 font-style: normal;
 font-weight: 500;
 font-size: 22px;
 line-height: 42px;
 /* identical to box height */
 
+}
+
+ion-popover{
+  ion-select-popover{
+
+    ion-label {
+      white-space: initial!important;
+    }
+    ion-item{
+      border-bottom: 1px solid #999999;
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+    }
+    
+  } 
+}
+
+
+ion-button{
+  letter-spacing: normal;
+}
+
+@media (max-width: 575px){
+  h2{
+    font-size:24px!important;  
+  }
+  .padding-div {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+ion-card{
+  margin-left: 0;
+    margin-right: 0;
+    margin-inline: 0!important;
+}
+}
+@media (min-width: 576px){
+  ion-card{
+    margin-inline: 0!important;
+    margin-left: 0;
+    margin-right:6px!important;
+  } 
+}
+
+@media (min-width:2000px){
+  h2{
+    font-size:60px!important;
+    margin-top:36px!important;
+  }
+  h3{
+    font-size: 55px!important;
+    line-height: 55px!important;
+    margin-top: 32px!important;
+  }
+  h4{
+    font-size:44px!important;
+    line-height: 44px!important;
+    margin-top: 32px!important;
+  }
+  h2,h4{
+    margin-bottom:30px!important;
+  }
+  ion-select, ion-button{
+    font-size:30px!important;
+    border-radius:16px!important;
+  }
+  ion-select{
+    width: 700px!important;
+    height:96px!important;
+    --padding-start: 32px!important;
+  }
+  ion-button{
+    height:96px!important;
+  }
+  ion-label{
+    font-size:24px!important;
+  }
+
+  span{
+    font-size:24px!important;
+  }
+  ion-card-header{
+    padding-inline: 32px!important;
+    padding:32px!important;
+  }
+  .rating-span{
+    left:-30px!important;
+    font-size:24px!important;
+  }
+  .gradient-bar{
+    height:24px!important;
+    width:120px!important;
+    margin-left:10px!important;
+  }
+  .detail-icon{
+    width:120px!important;
+  }
+  ion-card-content{
+    padding-inline-start: 32px!important;
+    padding-inline-end: 32px!important;
+    padding-bottom: 26px!important;
+    font-size: 28px!important;
+  }
+  ion-card{
+    margin-inline: 0!important;
+    margin-left: 0!important;
+    margin-right:12px!important;
+  } 
 }

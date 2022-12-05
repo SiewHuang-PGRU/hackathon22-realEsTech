@@ -1,6 +1,6 @@
 <ion-content [fullscreen]="true">
   <section class="header">
-    <div></div>
+    <div (click)="goToHome()"></div>
   </section>
   <section class="sub-header">
     Demo Residences
@@ -18,13 +18,13 @@
   <section class="highlights">
     Highlights
   </section>
-  <section class="attributes">
+  <section class="attributes bigscreen" >
     <div class="attribute-item">
       <div class="icon icon-1">
       </div>
       <div class="text">
         <label>Property Type</label>
-        <span>Residential Highrise</span>
+        <span>Condo</span>
       </div>
     </div>
 
@@ -33,7 +33,7 @@
       </div>
       <div class="text">
         <label>Location</label>
-        <span>District 15, Singapore</span>
+        <span>Singapore</span>
       </div>
     </div>
 
@@ -41,8 +41,8 @@
       <div class="icon icon-3">
       </div>
       <div class="text">
-        <label>Ready By</label>
-        <span>March 2024</span>
+        <label>Unit Type</label>
+        <span>2 Bedroom</span>
       </div>
     </div>
 
@@ -50,8 +50,8 @@
       <div class="icon icon-4">
       </div>
       <div class="text">
-        <label>Tenure</label>
-        <span>99 Years</span>
+        <label>Size</label>
+        <span>1001 sqft</span>
       </div>
     </div>
 
@@ -59,10 +59,62 @@
       <div class="icon icon-5">
       </div>
       <div class="text">
-        <label>Total Units</label>
-        <span>977</span>
+        <label>PSF</label>
+        <span>S$1,200 psf</span>
       </div>
     </div>
+  </section>
+  <section class="attributes smallscreen">
+    <div class="attribute-row1">
+      <div class="attribute-item">
+        <div class="icon icon-1">
+        </div>
+        <div class="text">
+          <label>Property Type</label>
+          <span>Condo</span>
+        </div>
+      </div>
+  
+      <div class="attribute-item">
+        <div class="icon icon-2">
+        </div>
+        <div class="text">
+          <label>Location</label>
+          <span>Singapore</span>
+        </div>
+      </div>
+  
+      <div class="attribute-item">
+        <div class="icon icon-3">
+        </div>
+        <div class="text">
+          <label>Unit Type</label>
+          <span>2 Bedroom</span>
+        </div>
+      </div>
+    </div>
+    
+<div class="attribute-row2">
+  <div class="attribute-item">
+    <div class="icon icon-4">
+    </div>
+    <div class="text">
+      <label>Size</label>
+      <span>1001 sqft</span>
+    </div>
+  </div>
+
+  <div class="attribute-item">
+    <div class="icon icon-5">
+    </div>
+    <div class="text">
+      <label>PSF</label>
+      <span>S$1,200 psf</span>
+    </div>
+  </div>
+
+</div>
+    
   </section>
   <section id="content">
     <app-selected-data-points  [ids]="selectedIds"></app-selected-data-points>
@@ -101,7 +153,7 @@
             9 mins drive - Holland Village
           </span>
         </div>
-        <div class="location-row">
+        <div class="location-row parks">
           <label>Parks</label>
           <span class="row-item">
             9 mins drive - Bukit Timah Nature Reserve
@@ -110,7 +162,7 @@
             15 mins drive - Singapore Botanic Gardens
           </span>
         </div>
-        <div class="location-row">
+        <div class="location-row schools">
           <label>Schools</label>
           <span class="row-item">
             5 mins drive - Singapore Institute of Management

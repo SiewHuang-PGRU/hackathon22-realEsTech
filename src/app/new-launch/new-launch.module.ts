@@ -15,6 +15,6 @@ import { NewLaunchPage } from './new-launch.page';
     IonicModule,
     NewLaunchPageRoutingModule
   ],
-  declarations: [NewLaunchPage]
+  declarations: []
 })
 export class NewLaunchPageModule {}

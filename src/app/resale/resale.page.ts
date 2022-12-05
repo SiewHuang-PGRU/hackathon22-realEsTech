@@ -7,6 +7,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class ResalePage implements OnInit {
   selectedIds:string;
+  locationName:string;
   constructor(private route:ActivatedRoute,private router: Router) { }
 
   ngOnInit() {
@@ -15,4 +16,12 @@ export class ResalePage implements OnInit {
     console.log(this.selectedIds);
   }
 
+  getLocation(location: string) {
+    this.locationName = location;
+    console.log(location);
+  }
+
+  goToHome(){
+    this.router.navigate(['/']);
+  }
 }

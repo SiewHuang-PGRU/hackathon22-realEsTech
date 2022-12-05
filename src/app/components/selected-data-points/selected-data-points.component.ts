@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 import { DataPoint } from 'src/app/model/datapoint';
@@ -13,6 +13,7 @@ export class SelectedDataPointsComponent implements OnInit {
   //@Input() details: DataPoint[] = [];
   @Input() ids: string;
   @Input() isPreview: boolean;
+  @Output() getLocationEvent = new EventEmitter<string>();
   details: DataPoint[] = [];
   constructor(private route: ActivatedRoute,
             private dataPointService: DatapointService) { }
@@ -28,6 +29,7 @@ export class SelectedDataPointsComponent implements OnInit {
       this.getSelectedDataPointsFromParam(this.ids);
       console.log('b');
     }
+    //this.newItemEvent.emit('value from child');
     console.log(this.isPreview);
   }
 
@@ -43,6 +45,9 @@ export class SelectedDataPointsComponent implements OnInit {
     });
     console.log(arr);
     this.dataPointService.getDataPointsByIds(arr)
-      .subscribe(res => this.details = res);
+      .subscribe(res => {
+        this.details = res;
+        this.getLocationEvent.emit(res[0].location);
+      });
   }
 }

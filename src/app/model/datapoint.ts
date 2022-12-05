@@ -8,5 +8,7 @@ export interface DataPoint {
     category: number;
     categoryName: string;
     location: string;
+    source: string;
+    icon: string;
     isSelected: boolean;
 }

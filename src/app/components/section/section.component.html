@@ -2,7 +2,7 @@
   <ion-grid class="sticky-grid">
     
       <ion-row class="ion-align-items-center ion-justify-content-between" class="embed-row">
-        <ion-col style="padding-top:23px;">
+        <ion-col class="embed-col">
           {{selectedDatapoints.length}} Selected
         </ion-col>
           <!-- <ion-button (click)="updateAll()" *ngIf="!isAllSelected">Select All</ion-button>
@@ -22,7 +22,7 @@
       <ion-chip *ngFor="let grp of groups" class="top-chip">{{grp.categoryName}}</ion-chip>
     </ion-row> -->
     <ion-row >
-      <span class="ion-color-pg4b-black">Select the pointers that you would like to show.</span>
+      <span class="ion-color-pg4b-black">Select the indexes that you would like to show.</span>
     </ion-row>
     <div *ngFor="let data of groups" class="content-div">
       <!-- <app-category [group]="data"></app-category> -->
@@ -37,7 +37,7 @@
             
             <ion-card style="box-shadow: none;" (click)="updateSelectedData(detail)" [ngClass]="{'selected-card': detail.isSelected}">
               <ion-card-header>
-                <ion-row>
+                <ion-row style="padding-bottom: 10px;">
                   <span class="category-tag" [ngClass]="detail.categoryName">{{detail.categoryName}}</span>
                   
                     <div class="star-col">
@@ -47,23 +47,31 @@
                     </div>                  
                 </ion-row>  
                 <ion-row>
-                  <ion-col size="9">
-                    <ion-card-subtitle>{{detail.attr1}}</ion-card-subtitle>
+                  <ion-col size="8">
+                    <ion-card-subtitle>{{detail.attr1}}<ion-icon id="info-icon-{{detail.id}}" class="info-icon" name="alert-circle-outline" ></ion-icon></ion-card-subtitle>
+                    <ion-popover trigger="info-icon-{{detail.id}}" triggerAction="hover" side="top" alignment="center">
+                      <ng-template>
+                        <ion-content class="ion-padding">{{detail.attr1}}</ion-content>
+                      </ng-template>
+                    </ion-popover>
                     <ion-card-title>{{detail.attr2}}</ion-card-title>   
-                    <span class="extra-desc">{{detail.attr3}}</span>
+                    
                   </ion-col>
-                  <ion-col size="3">
-                    <img src="assets/pet.svg">
+                  <ion-col size="4">
+                    <img src="assets/{{detail.icon}}" class="detail-icon">
                   </ion-col>
                 </ion-row>
                   
               </ion-card-header>
               <ion-card-content>
+                <ion-row>
+                  <span class="extra-desc">{{detail.attr3}}</span>
+                </ion-row>
                 <ion-row >
                   <ion-col size="11">
-                    <span class="desc-span">Source: Singapore Government Statistics</span>
+                    <span class="desc-span">Source: {{detail.source}}</span>
                   </ion-col>
-                  <ion-col size="1">
+                  <ion-col size="1" class="checkbox-col" >
                     <span class="checkbox-span">
                       <ion-icon name="square-outline" *ngIf="!detail.isSelected"></ion-icon>
                       <ion-icon name="checkbox" *ngIf="detail.isSelected"></ion-icon>
@@ -94,15 +102,15 @@
     <ion-header class="ion-no-border">
       <ion-toolbar>
         <ion-title><h3>Preview</h3></ion-title>
-        <ion-title><label class="resp-label">Content here will be responsive.</label></ion-title>
         <!-- <ion-buttons slot="end">
           <ion-button (click)="setOpen(false)">Close</ion-button>
         </ion-buttons> -->
-        <ion-icon name="close" (click)="setOpen(false)"  style="position:absolute;top:5px;right:5px;font-size:20px"></ion-icon>
+        <ion-icon name="close" (click)="setOpen(false)"  class="close-icon"></ion-icon>
       </ion-toolbar>
       
     </ion-header>
     <ion-content class="ion-padding">
+      <ion-row><label class="resp-label">Content here will be responsive.</label></ion-row>
       <ion-row style="padding-top:0">
 <ion-col size-xl="9" size-lg="8" size-md="12" size-sm="12" size-xs="12" class="preview-section">
   <!-- <ion-row><h4>Liveability Index</h4></ion-row> -->
@@ -110,15 +118,13 @@
   
 </ion-col>
 <ion-col  class="embed-section">
-  <ion-row><span style="font-size:18px;padding-top: 20px;
-    padding-bottom: 20px;">Embed Content</span></ion-row>
+  <ion-row><span class="embed-title" >Embed Content</span></ion-row>
   <ion-item>
     <ion-textarea [autoGrow]="true"
     value="{{embededCode}}">
   </ion-textarea>
   </ion-item>
-  <ion-button (click)="copyCode(embededCode)" fill="outline" style="height: 48px;position: absolute;
-  bottom: 0;">Copy Code</ion-button>
+  <ion-button (click)="copyCode(embededCode)" fill="outline" class="copycode-btn" >Copy Code</ion-button>
 </ion-col>
       </ion-row>
     </ion-content>

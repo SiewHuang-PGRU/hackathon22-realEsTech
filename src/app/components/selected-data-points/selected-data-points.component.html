@@ -1,10 +1,10 @@
 <ion-row class="preview-box">
-  <ion-row><h4>Liveability Index</h4></ion-row>
+  <ion-row><h4 style="padding-bottom: 10px;line-height:0;padding-top:26px;">Liveability Index</h4></ion-row>
     <ion-row *ngIf="isPreview == true;else notpreview" style="padding-left:0;padding-right:0;">
       <ion-col   size-xl="4" size-lg="6" size-md="6" size-sm="12" size-xs="12" *ngFor="let detail of details" style="padding:0;">
         <ion-card style="box-shadow: none;">
           <ion-card-header>
-            <ion-row>
+            <ion-row style="padding-bottom: 10px;">
               <span class="category-tag" [ngClass]="detail.categoryName">{{detail.categoryName}}</span>
               
                 <div class="star-col">
@@ -14,21 +14,28 @@
                 </div>                  
             </ion-row>  
             <ion-row>
-              <ion-col size="9">
-                <ion-card-subtitle>{{detail.attr1}}</ion-card-subtitle>
+              <ion-col size="8">
+                <ion-card-subtitle>{{detail.attr1}}<ion-icon id="info-icon-{{detail.id}}" class="info-icon" name="alert-circle-outline" ></ion-icon></ion-card-subtitle>
+                <ion-popover trigger="info-icon-{{detail.id}}" triggerAction="hover" side="top" alignment="center">
+                  <ng-template>
+                    <ion-content class="ion-padding">{{detail.attr1}}</ion-content>
+                  </ng-template>
+                </ion-popover>
                 <ion-card-title>{{detail.attr2}}</ion-card-title>   
-                <span class="extra-desc">{{detail.attr3}}</span>
               </ion-col>
-              <ion-col size="3">
-                <img src="assets/pet.svg">
+              <ion-col size="4">
+                <img src="assets/{{detail.icon}}" class="detail-icon">
               </ion-col>
             </ion-row>
               
           </ion-card-header>
           <ion-card-content>
+            <ion-row>
+              <span class="extra-desc">{{detail.attr3}}</span>
+            </ion-row>
             <ion-row >
               <ion-col size="12">
-                <span class="desc-span">Source: Singapore Government Statistics</span>
+                <span class="desc-span">Source: {{detail.source}}</span>
               </ion-col>              
             </ion-row> 
           </ion-card-content>
@@ -52,20 +59,28 @@
             </ion-row>  
             <ion-row>
               <ion-col size="9">
-                <ion-card-subtitle>{{detail.attr1}}</ion-card-subtitle>
+                <ion-card-subtitle>{{detail.attr1}}<ion-icon id="info-icon-{{detail.id}}" class="info-icon" name="alert-circle-outline" ></ion-icon></ion-card-subtitle>
+                <ion-popover trigger="info-icon-{{detail.id}}" triggerAction="hover" side="top" alignment="center">
+                  <ng-template>
+                    <ion-content class="ion-padding">{{detail.attr1}}</ion-content>
+                  </ng-template>
+                </ion-popover>
                 <ion-card-title>{{detail.attr2}}</ion-card-title>   
-                <span class="extra-desc">{{detail.attr3}}</span>
+                
               </ion-col>
               <ion-col size="3">
-                <img src="assets/pet.svg">
+                <img src="assets/{{detail.icon}}" class="detail-icon">
               </ion-col>
             </ion-row>
               
           </ion-card-header>
           <ion-card-content>
+            <ion-row>
+              <span class="extra-desc">{{detail.attr3}}</span>
+            </ion-row>
             <ion-row >
               <ion-col size="12">
-                <span class="desc-span">Source: Singapore Government Statistics</span>
+                <span class="desc-span">Source: {{detail.source}}</span>
               </ion-col>              
             </ion-row> 
           </ion-card-content>
@@ -75,7 +90,7 @@
     </ng-template>
     
     <ion-row>
-      <span style="font-size:12px">Powered by PropertyGuru for Business</span>
+      <span style="font-size:12px;">Powered by PropertyGuru for Business</span>
     </ion-row>
 </ion-row>
     
