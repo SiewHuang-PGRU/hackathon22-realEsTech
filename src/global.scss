@@ -104,7 +104,7 @@
   ion-button{
     text-transform: none;
     height:48px;
-    font-family: "Roboto Regular 400";
+    font-family: "Roboto";
   }
 
   .padding-div{
@@ -116,6 +116,10 @@
 
 ion-modal{
     --width:95%;
+    --height:90%;
+    .inner-scroll{
+      padding-top:16px!important;
+    }
 }
 
 h4{
@@ -131,6 +135,10 @@ line-height: 42px;
 ion-popover{
   ion-select-popover{
 
+    .list-md{
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
     ion-label {
       white-space: initial!important;
     }
@@ -142,6 +150,7 @@ ion-popover{
     
   } 
 }
+
 
 
 ion-button{
@@ -234,4 +243,9 @@ ion-card{
     margin-left: 0!important;
     margin-right:12px!important;
   } 
+}
+
+html.ios ion-modal ion-toolbar {
+  padding-right: 0!important;
+  padding-left: 0!important;
 }

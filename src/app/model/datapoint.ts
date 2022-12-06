@@ -10,5 +10,6 @@ export interface DataPoint {
     location: string;
     source: string;
     icon: string;
+    tooltip: string;
     isSelected: boolean;
 }

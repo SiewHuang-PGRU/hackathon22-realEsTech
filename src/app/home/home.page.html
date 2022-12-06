@@ -1,18 +1,21 @@
 
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       <img src="assets/forbusiness.svg" style="padding-left: 30px">
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <section class="header" >
+    <div></div>
+  </section>
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large"><img src="assets/forbusiness.svg"></ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
 
   <div id="container">
     <ion-row class="ion-align-items-center header-row" >
@@ -23,14 +26,14 @@
     
      <ion-row class="ion-align-items-center searchbar-row">
         <!-- <ion-searchbar animated="true" placeholder="Search address" #searchLocation class="search-bar"  style="border-radius:8px"></ion-searchbar> -->
-        <ion-select placeholder="Search address" #searchLocation interface="popover" [interfaceOptions]="{size: 'cover'}" class="search-bar"  style="border-radius:8px;padding-right: 16px;">
+        <ion-select mode="md" placeholder="Search address" #searchLocation interface="popover" [interfaceOptions]="{size: 'cover'}" class="search-bar"  style="border-radius:8px;padding-right: 16px;">
           <ion-select-option value="97 Cashew Rd, Singapore 679668 (West)">97 Cashew Rd, Singapore 679668 (West)</ion-select-option>
           <ion-select-option value="60 Anson Rd, Singapore 079914 (Central)">60 Anson Rd, Singapore 079914 (Central)</ion-select-option>
           <ion-select-option value="450 Upper Changi Rd, Singapore 487040 (East)">450 Upper Changi Rd, Singapore 487040 (East)</ion-select-option>
           <ion-select-option value="507B Wellington Cir, Singapore 752507 (North)">507B Wellington Cir, Singapore 752507 (North)</ion-select-option>
           <ion-select-option value="21 Telok Blangah Dr, Singapore 109258 (South)">21 Telok Blangah Dr, Singapore 109258 (South)</ion-select-option>
         </ion-select>
-        <ion-button (click)="getDataPoints(searchLocation.value)" class="search-btn" [disabled]="searchLocation.value === any">Search</ion-button>
+        <ion-button (click)="getDataPoints(searchLocation.value)" class="search-btn" [disabled]="!searchLocation.value">Search</ion-button>
       
      </ion-row>
       

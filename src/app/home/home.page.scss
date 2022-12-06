@@ -29,7 +29,21 @@
 #container a {
   text-decoration: none;
 }
+.header {
+  width: 100vw;
+  box-shadow: 0px 0px 8px 0 rgb(0 0 0 / 20%);
+  padding-left: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 
+  div {
+    width: 120px;
+    height: 30px;
+    background-image: url("../../assets/forbusiness.svg");
+    background-repeat: no-repeat;
+    background-size:contain;
+  }
+}
 h2{
   /* Headline 2 */
 
@@ -93,6 +107,11 @@ ion-row{
     height:180px;
     width:180px;
   }
+  .header{
+    padding-left: 16px!important;
+    padding-top: 15px!important;
+    padding-bottom: 15px!important;
+  }
   .header-row{
     padding-bottom:0;
   }
@@ -109,6 +128,14 @@ ion-row{
 }
 
 @media (min-width:2000px){
+  .header{
+    padding-top: 30px!important;
+  padding-bottom: 30px!important;
+    div{
+      width:240px!important;
+      height: 60px!important;
+    }
+  }
   .search-bar{
     padding-right:32px!important;
     
